@@ -41,11 +41,13 @@ int main() {
                 std::cerr << "Dimensões inválidas" << std::endl;
                 return 1;
             }
-        } else {
+        }
+        else {
             std::cerr << "Comando de dimensão inválido" << std::endl;
             return 1;
         }
-    } else {
+    }
+    else {
         std::cerr << "Erro ao ler as dimensões do arquivo" << std::endl;
         return 1;
     }
@@ -78,34 +80,41 @@ int main() {
             float r, g, b, a;
             ss >> x >> y >> z >> r >> g >> b >> a;
             figuras.push_back(new PutVoxel(x, y, z, r, g, b, a));
-        } else if (comando == "CutVoxel") {
+        }
+        else if (comando == "CutVoxel") {
             int x, y, z;
             ss >> x >> y >> z;
             figuras.push_back(new CutVoxel(x, y, z));
-        } else if (comando == "PutBox") {
+        }
+        else if (comando == "PutBox") {
             int x0, x1, y0, y1, z0, z1;
             float r, g, b, a;
             ss >> x0 >> x1 >> y0 >> y1 >> z0 >> z1 >> r >> g >> b >> a;
             figuras.push_back(new PutBox(x0, x1, y0, y1, z0, z1, r, g, b, a));
-        } else if (comando == "CutBox") {
+        }
+        else if (comando == "CutBox") {
             int x0, x1, y0, y1, z0, z1;
             ss >> x0 >> x1 >> y0 >> y1 >> z0 >> z1;
             figuras.push_back(new CutBox(x0, x1, y0, y1, z0, z1));
-        } else if (comando == "PutSphere") {
+        }
+        else if (comando == "PutSphere") {
             int xcenter, ycenter, zcenter, radius;
             float r, g, b, a;
             ss >> xcenter >> ycenter >> zcenter >> radius >> r >> g >> b >> a;
             figuras.push_back(new PutSphere(xcenter, ycenter, zcenter, radius, r, g, b, a));
-        } else if (comando == "CutSphere") {
+        }
+        else if (comando == "CutSphere") {
             int xcenter, ycenter, zcenter, radius;
             ss >> xcenter >> ycenter >> zcenter >> radius;
             figuras.push_back(new CutSphere(xcenter, ycenter, zcenter, radius));
-        } else if (comando == "PutEllipsoid") {
+        }
+        else if (comando == "PutEllipsoid") {
             int xcenter, ycenter, zcenter, rx, ry, rz;
             float r, g, b, a;
             ss >> xcenter >> ycenter >> zcenter >> rx >> ry >> rz >> r >> g >> b >> a;
             figuras.push_back(new PutEllipsoid(xcenter, ycenter, zcenter, rx, ry, rz, r, g, b, a));
-        } else if (comando == "CutEllipsoid") {
+        }
+        else if (comando == "CutEllipsoid") {
             int xcenter, ycenter, zcenter, rx, ry, rz;
             ss >> xcenter >> ycenter >> zcenter >> rx >> ry >> rz;
             figuras.push_back(new CutEllipsoid(xcenter, ycenter, zcenter, rx, ry, rz));
